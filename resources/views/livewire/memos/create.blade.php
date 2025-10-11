@@ -8,10 +8,12 @@ state(['title', 'body']);
 // メモを保存する関数
 $store = function () {
     // フォームからの入力値をデータベースに保存
-    Memo::create([
-        'title' => $this->title,
-        'body' => $this->body,
-    ]);
+    // Memo::create([
+    //     'title' => $this->title,
+    //     'body' => $this->body,
+    // ]);
+
+    Memo::create($this->all());
     // 一覧ページにリダイレクト
     return redirect()->route('memos.index');
 };
@@ -24,11 +26,11 @@ $store = function () {
 
     <form wire:submit="store">
         <p>
-            <label for="title">タイトル</label>
+            <label for="title">タイトル</label><br>
             <input type="text" wire:model="title" id="title">
         </p>
         <p>
-            <label for="body">本文</label>
+            <label for="body">本文</label><br>
             <textarea wire:model="body" id="body"></textarea>
         </p>
         <button type="submit">登録</button>
