@@ -10,7 +10,7 @@
     -webkit-background-clip: text;
     color: transparent;
     font-weight: bold;
-    font-size: 0.3em;
+    font-size: 3em;
     animation: moveGradient 5s linear infinite;
     background-size: 400%;
     margin-top: 0.25rem;
