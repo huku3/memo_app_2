@@ -14,12 +14,21 @@ $destroy = function () {
     return redirect()->route('memos.index');
 };
 
+$getPriorityText = function ($priority) {
+    return match ($priority) {
+        1 => '低',
+        2 => '中',
+        3 => '高',
+        default => '不明',
+    };
+};
 ?>
 
 <div>
     <a href="{{ route('memos.index') }}">戻る</a>
     <h1>{{ $memo->title }}</h1>
     <p>{!! nl2br(e($memo->body)) !!}</p>
+    <p><strong>優先度:</strong> {{ $memo->priority_text }}</p>
 
     {{-- <a href="{{route('memos.edit', $memo)}}">編集する</a> --}}
     <button wire:click="edit">編集する</button>
