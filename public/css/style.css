@@ -1,0 +1,28 @@
+.error {
+    background: linear-gradient(90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            cyan,
+            blue,
+            violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 0.3em;
+    animation: moveGradient 5s linear infinite;
+    background-size: 400%;
+    margin-top: 0.25rem;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+
+}
